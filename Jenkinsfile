@@ -12,6 +12,7 @@ pipeline {
         stage('Test File Exists') {
           steps {
             fileExists 'ShoppingBasketTest1.java'
+            readFile(encoding: 'UTF-8', file: 'Item.java')
           }
         }
 
