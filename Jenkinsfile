@@ -2,8 +2,19 @@ pipeline {
   agent any
   stages {
     stage('initialize') {
-      steps {
-        echo 'First Pipeline Message'
+      parallel {
+        stage('initialize') {
+          steps {
+            echo 'First Pipeline Message'
+          }
+        }
+
+        stage('Test') {
+          steps {
+            fileExists 'ShoppingBasketTest.java'
+          }
+        }
+
       }
     }
 
