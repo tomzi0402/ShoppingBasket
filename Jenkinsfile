@@ -3,15 +3,15 @@ pipeline {
   stages {
     stage('initialize') {
       parallel {
-        stage('initialize') {
+        stage('Print Message') {
           steps {
             echo 'First Pipeline Message'
           }
         }
 
-        stage('Test') {
+        stage('Test File Exists') {
           steps {
-            fileExists 'ShoppingBasketTest.java'
+            fileExists 'ShoppingBasketTest1.java'
           }
         }
 
