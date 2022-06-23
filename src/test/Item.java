@@ -13,4 +13,5 @@ public class Item {
 	double getSubTotal() {
 		return unitPrice * (double) quantity;
 	}
+	
 }
